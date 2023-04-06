@@ -117,7 +117,7 @@ Add this at the begining (after the other before_action):
 ```
 before_action :authenticate_user!
 ```
-
+___
 change: (that will only list the current user events)
 ```
   def index
@@ -131,7 +131,7 @@ to:
     @events = current_user.events
   end
 ```
-
+___
 change: (that will associate the events to the user at creation)
 ```
   # POST /events or /events.json
@@ -144,7 +144,7 @@ to:
   def create
     @event = current_user.events.new(event_params)
 ```
-
+___
 change: (that will handle the other function like edit and show to work only if the user own the event)
 ```
   private
